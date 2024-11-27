@@ -21,12 +21,12 @@ export const Panel = ({ children, user, sidebarOptions }) => {
         />
         <main className="main-content">{children}</main>
       </div>
-      {/* Footer siempre abajo */}
-      <Footer />
       {/* Botón de toggling para pantallas pequeñas */}
       <button className="sidebar-toggle" onClick={toggleSidebar}>
         ☰
       </button>
+      {/* Footer siempre abajo */}
+      <Footer />
     </div>
   );
 };
