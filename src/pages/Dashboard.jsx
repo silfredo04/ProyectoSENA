@@ -60,6 +60,12 @@ export const Dashboard = ({rol,name}) => {
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSXszfovAk7An4vfrFY8_9Unz_8IN9fdGN4g&s',
         description: 'Este modulo nos ayuda a asignar a cada profesor un curso',
         link: 'FormAsignarCursoEstudi'
+       },
+       {
+        title: 'Asignación Asignatura profesor',
+        image: 'https://png.pngtree.com/png-clipart/20210101/ourlarge/pngtree-teacher-assigns-homework-teacher-clipart-png-image_2678877.jpg',
+        description: 'Este modulo nos ayuda a asignar a cada profesor un curso',
+        link: 'FormAsignarAsignaturaProfe'
        }
     ];
 
