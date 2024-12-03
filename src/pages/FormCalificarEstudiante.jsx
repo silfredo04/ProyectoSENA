@@ -136,7 +136,7 @@ export const FormCalificarEstudiante = () => {
         cuarto_periodo: parseFloat(tb.cuarto_periodo),
         nota_final: parseFloat(tb.nota_final)
       };
-      const respuesta = await put('/calificar/actualizarCalificacion', datosEnvio);
+      const respuesta = await post('/calificar/crear', datosEnvio);
       const dato = await respuesta.json();
       console.log(dato)
     }
@@ -159,29 +159,9 @@ export const FormCalificarEstudiante = () => {
         cuarto_periodo: parseFloat(tb.cuarto_periodo),
         nota_final: parseFloat(tb.nota_final)
       };
-      if (datosEnvio.primer_periodo == 0 || datosEnvio.segundo_periodo == 0 || datosEnvio.tercer_periodo == 0 || datosEnvio.cuarto_periodo == 0 || datosEnvio.nota_final == 0) {
-        // Enviar los datos por POST a tu servidor
-        const respuesta = await post('/calificar/crear', datosEnvio);
-        const dato = await respuesta.json();
-        console.log(dato)
-      } else {
-        const notasActualizar = {
-          id_estudiante: tb.id_estudiante,
-          id_curso: tb.id_curso,
-          id_asignatura: tb.id_asignatura,
-          id_profesor: tb.id_profesor,
-          id_periodo: tb.id_periodo,
-          primer_periodo: parseFloat(tb.primer_periodo),
-          segundo_periodo: parseFloat(tb.segundo_periodo),
-          tercer_periodo: parseFloat(tb.tercer_periodo),
-          cuarto_periodo: parseFloat(tb.cuarto_periodo),
-          nota_final: parseFloat(tb.nota_final)
-        };
-        const respuesta = await put('/calificar/actualizarCalificacion', notasActualizar);
-        const dato = await respuesta.json();
-        console.log(dato)
-      }
-
+      const respuesta = await put('/calificar/actualizarCalificacion', datosEnvio);
+      const dato = await respuesta.json();
+      console.log(dato)
     }
 
   };
