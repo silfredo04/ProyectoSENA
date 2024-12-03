@@ -26,11 +26,10 @@ export const IndexPrivado = () => {
 
     const sidebarOptionsProfe = [
         { label: "Calificar estudiantes", link: "/panel/FormCalificarEstudiante", icon: "🏠" },
-        { label: "Listar Estudiantes", link: "/panel/ListarEstudianteCurso", icon: "👥" },
     ];
 
     const sidebarOptionsEstu = [
-        { label: "Ver calificaciones", link: "#", icon: "⚙️" },
+        { label: "Ver calificaciones", link: "/panel/FormVerCalificaciones", icon: "⚙️" },
     ];
     const getSidebarOptions = (rol) => {
         if (rol === "admin") {

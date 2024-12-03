@@ -70,12 +70,6 @@ export const Dashboard = ({rol,name}) => {
              description: 'Listar los usuarios del sistema',
              link: 'FormCalificarEstudiante'
         },
-        {
-             title: 'Listar estudiante',
-             image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnvTxzYxOHEKO0OXyCfF8OLSAZhpMsRroYQA&s',
-             description: 'Listar los Cursos del sistema',
-             link: 'ListarEstudianteCurso'
-        }
     ];
 
     const cardEstu = [
@@ -83,25 +77,28 @@ export const Dashboard = ({rol,name}) => {
              title: 'Ver Calificaciones',
              image: 'https://img.freepik.com/vector-premium/lista-verificacion-completa-ilustracion-plana-mujer-dibujos-animados_74855-18269.jpg',
              description: 'Listar los usuarios del sistema',
-             link: '/admin/users'
+             link: 'FormVerCalificaciones'
         },
     ];
 
     let cardsToRender = [];
-
+    let mensaje = ''
     if (rol === "admin") {
         cardsToRender = cardAdmin;
+        mensaje ='Welcome to the Admin MyAcademy'
     } else if (rol === "Profesor") {
         cardsToRender = cardProfe;
+        mensaje ='Welcome to the Profesor MyAcademy'
     } else if (rol === "Estudiante") {
         cardsToRender = cardEstu;
+        mensaje ='Welcome to the Estudiante MyAcademy'
     }
 
     return (
         <>
             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mb: 3 }}>
                 <Grid container justifyContent="center" alignItems="center">
-                    <h1>Welcome to the Admin MyAcademy</h1>
+                    <h1>{mensaje}</h1>
                 </Grid>
             </Box>
             <Box sx={{ padding: '10px' }}>
